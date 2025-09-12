@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Astan.io - Your 911 for Social Media Safety",
+  title: "Astan.io - Cross Platform Protocol for Trust",
   description: "Cross-platform social media safety reporting system. Report harms instantly across multiple platforms.",
   generator: "v0.app",
 }

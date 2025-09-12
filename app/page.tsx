@@ -48,8 +48,8 @@ export default function HomePage() {
               <Image src="/logo.png" alt="Astan Logo" width={200} height={60} className="h-16 w-auto" />
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Your <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">911</span>{" "}
-              for Social Media Safety
+              <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Cross platform</span>{" "}
+              Protocol for Trust
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
               The first cross-platform reporting system that enables organizations to report social media harms—hacking,
@@ -333,7 +333,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-muted-foreground">
-            <p>&copy; 2024 ASTAN INC. All rights reserved. Your 911 for Social Media Safety.</p>
+            <p>&copy; 2024 ASTAN INC. All rights reserved. Cross Platform Protocol for Trust.</p>
           </div>
         </div>
       </footer>
