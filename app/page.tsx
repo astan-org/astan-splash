@@ -49,7 +49,7 @@ export default function HomePage() {
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
               <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                Updated Website Coming Soon
+                Updated Website <span className="whitespace-nowrap">Coming Soon</span>
               </span>
               {" "}
             </h1>
