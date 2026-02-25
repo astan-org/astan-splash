@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-muted-foreground">
-            <p>&copy; 2026 ASTAN INC. All rights reserved.</p>
+            <p>&copy; { new Date().getFullYear(); } ASTAN INC. All rights reserved.</p>
           </div>
         </div>
       </footer>
