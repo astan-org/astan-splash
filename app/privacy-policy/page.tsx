@@ -2,6 +2,7 @@ import Image from "next/image"
 
 export default function PrivacyPolicyPage() {
   return (
+    <div>
       {/* Footer */}
       <footer className="border-t border-border bg-gradient-to-b from-blue-50/30 to-white py-16 px-4">
         <div className="container mx-auto text-center">
