@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
             <Image src="/logo.png" alt="Astan Logo" width={120} height={40} className="h-8 w-auto" />
           </div>
           <p className="text-muted-foreground">
-            &copy; { new Date().getFullYear(); } ASTAN INC. All rights reserved. Cross Platform Protocol for Trust.
+            &copy; { new Date().getFullYear() } ASTAN INC. All rights reserved. Cross Platform Protocol for Trust.
           </p>
         </div>
       </footer>
