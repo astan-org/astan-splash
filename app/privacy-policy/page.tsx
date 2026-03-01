@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Privacy Policy Content */}
       <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
+        <h1 className="text-4xl font-bold text-foreground mb-8">Cross-Platform Abuse Response - Privacy Policy</h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
           <section>
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
             <Image src="/logo.png" alt="Astan Logo" width={120} height={40} className="h-8 w-auto" />
           </div>
           <p className="text-muted-foreground">
-            &copy; { new Date().getFullYear() } ASTAN INC. All rights reserved. Cross Platform Protocol for Trust.
+            &copy; { new Date().getFullYear() } ASTAN INC. All rights reserved.
           </p>
         </div>
       </footer>
