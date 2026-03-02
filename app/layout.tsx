@@ -16,8 +16,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Astan - The AI Standard for Online Safety Compliance",
-  description: "We are the building the standard for AI safety: from proactive, real-time tutoring to cross-platform response.",
+  title: "Astan.io: The AI Standard for Online Safety Compliance",
+  description: "We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
   generator: "v0.app",
 }
 
