@@ -15,6 +15,7 @@ import {
 import Image from "next/image"
 import { CPARScreenshotSlideshow } from "@/components/cpar-screenshot-slideshow"
 import { CyberPalsScreenshotSlideshow } from "@/components/cyberpals-screenshot-slideshow"
+import ContactForm from "@/components/contact-form"
 
 const renderItalics = (text: string) =>
   text.split(/(\*.*?\*)/g).map((part, i) =>
@@ -69,7 +70,7 @@ export default function HomePage() {
             <a href="#contact" className="px-8 py-4 rounded-xl bg-primary text-white font-semibold shadow-lg hover:opacity-90 transition">
               Request Pilot Access
             </a>
-            <a download className="px-8 py-4 rounded-xl border border-border font-semibold hover:bg-muted transition">
+            <a download className="px-8 py-4 rounded-xl cursor-pointer border border-border font-semibold hover:bg-muted transition">
               Download Whitepaper
             </a>
           </div>
@@ -255,6 +256,7 @@ export default function HomePage() {
         <p className="text-xl mb-10">
           Ready to work together?
         </p>
+        <ContactForm />
       </section>
 
 
