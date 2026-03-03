@@ -9,14 +9,14 @@ const screenshots = [
   {
     src: "/screenshots/cyberpals.png",
     alt: "CyberPals",
-    title: "Safety Education for Young Users",
-    description: "Provides proactive education and age-appropriate guidance to empower young users.",
+    title: "Agentic AI-Led Security Tutoring",
+    description: "Provides proactive, age-appropriate tutoring to empower young users.",
   },
   {
     src: "/screenshots/cyberpals-use-case.png",
     alt: "CyberPals Use Case",
-    title: "Agentic AI Companions for Safer Online Experiences",
-    description: "Detects impersonation, scams, and abuse in real time without disrupting UX.",
+    title: "Real Time Adversarial-Based Harm Detection",
+    description: "Detects impersonation, scams, NCII, and other abuse in real time without disrupting UX.",
   },
 ]
 
