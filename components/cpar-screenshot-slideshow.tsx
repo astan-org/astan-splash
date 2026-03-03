@@ -30,12 +30,12 @@ const screenshots = [
     title: "Secure Identity Verification",
     description: "Enterprise-grade identity verification powered by SumSub for authenticated reporting",
   },
-  {
-    src: "/screenshots/verification-success.png",
-    alt: "Verification Complete",
-    title: "Verified Reporter Status",
-    description: "Confirmed identity verification ensures trusted and authenticated incident submissions",
-  },
+  // {
+  //   src: "/screenshots/verification-success.png",
+  //   alt: "Verification Complete",
+  //   title: "Verified Reporter Status",
+  //   description: "Confirmed identity verification ensures trusted and authenticated incident submissions",
+  // },
 ]
 
 export function CPARScreenshotSlideshow() {
