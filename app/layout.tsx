@@ -18,7 +18,21 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Astan.io: The AI Standard for Online Safety Compliance",
   description: "We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
-  generator: "v0.app",
+  openGraph: {
+    title: "Astan.io",
+    description: "The AI Standard for Online Safety Compliance. We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
+    url: "https://astan.io",
+    siteName: "Astan",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1400,
+        height: 410,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
