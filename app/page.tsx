@@ -28,7 +28,7 @@ const renderItalics = (text: string) =>
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
 
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
@@ -45,7 +45,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero */}
-      <section className="relative py-28 px-4 overflow-hidden">
+      <section className="relative py-28 px-4">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-white" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.12),transparent_55%)]" />
 
@@ -54,7 +54,7 @@ export default function HomePage() {
             <Image src="/logo.png" alt="Astan Logo" width={200} height={60} />
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-6xl md:text-7xl max-sm:text-5xl font-bold leading-tight mb-6">
             <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               The New Standard
             </span>{" "}
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* Problem */}
-      <section id="vision" className="py-24 px-4 bg-white">
+      <section id="vision" className="py-24 px-4 bg-white scroll-mt-10">
         <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-12">
             Fragmented Systems. Growing Risk.
@@ -106,7 +106,7 @@ export default function HomePage() {
 
 
       {/* CyberPals */}
-      <section id="features" className="py-24 px-4 bg-gradient-to-b from-blue-50/30 to-white relative">
+      <section id="features" className="py-24 px-4 bg-gradient-to-b from-blue-50/30 to-white relative scroll-mt-10">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -249,7 +249,7 @@ export default function HomePage() {
 
 
       {/* CTA */}
-      <section id="contact" className="py-24 px-4 bg-gradient-to-r from-primary to-blue-600 text-white text-center">
+      <section id="contact" className="py-24 px-4 bg-gradient-to-r from-primary to-blue-600 text-white text-center scroll-mt-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Securing Trust. Unlocking Growth.
         </h2>
