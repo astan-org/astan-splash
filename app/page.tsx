@@ -70,9 +70,9 @@ export default function HomePage() {
             <a href="#contact" className="px-8 py-4 rounded-xl bg-primary text-white font-semibold shadow-lg hover:opacity-90 transition">
               Request Pilot Access
             </a>
-            <a download className="px-8 py-4 rounded-xl cursor-pointer border border-border font-semibold hover:bg-muted transition">
+            {/* <a download className="px-8 py-4 rounded-xl cursor-pointer border border-border font-semibold hover:bg-muted transition">
               Download Whitepaper
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: BookOpen, title: "The Education Gap", text: "Current security tutoring is stuck on offline guides and non-interactive sessions that adolescents never see and parents don't use." },
+              { icon: BookOpen, title: "The Proactive Detection Gap", text: "Current security tutoring is stuck on offline guides and non-interactive sessions that adolescents never see and parents don't use." },
               { icon: Puzzle, title: "The Silo Failure", text: "Authentication and abuse detection are isolated; platforms don’t communicate, leaving victims to report the same deepfake scam to a dozen different \"voids\"." },
               { icon: Gavel, title: "The Compliance Hammer", text: "Regulators are issuing massive, multi-million dollar fines as the US *Take It Down Act*, EU *DSA*, and UK *Online Safety Act* enter into effect." },
             ].map(({ icon: Icon, title, text }) => (
@@ -113,7 +113,7 @@ export default function HomePage() {
               The CyberPals Suite
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-16 leading-relaxed">
-              Agentic AI companions delivering proactive education,
+              Agentic AI companions delivering proactive tutoring,
               real-time risk detection, and age-aware guidance.
             </p>
           </div>
