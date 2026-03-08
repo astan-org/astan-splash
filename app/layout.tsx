@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Astan.io: The AI Standard for Online Safety Compliance",
   description: "We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
   openGraph: {
-    title: "Astan.io",
+    title: "Astan",
     description: "The AI Standard for Online Safety Compliance. We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
     url: "https://astan.io",
     siteName: "Astan",
