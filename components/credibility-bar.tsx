@@ -164,10 +164,11 @@ export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) 
             The team
           </Eyebrow>
 
-          {/* One line at every width, spread edge to edge. The viewport-scaled
-             font-size shrinks the marks in step below ~1140px so the row never
-             wraps; justify-between spends the slack as even gaps above it. */}
-          <ul className="mt-6 flex items-center justify-between gap-x-1 text-[clamp(8px,2.8vw,20px)]">
+          {/* From 1250px the row is one line spread edge to edge, sized off a
+             20px baseline. Below that there is no width to do it in without
+             shrinking the marks past legibility, so they return to their own
+             size and wrap onto as many lines as they need. */}
+          <ul className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6 text-[16px] min-[1250px]:flex-nowrap min-[1250px]:justify-between min-[1250px]:gap-x-1 min-[1250px]:text-[20px]">
             {pedigree.map((item) => (
               <li
                 key={item.name}

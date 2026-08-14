@@ -131,10 +131,16 @@ export default function HomePage() {
                 </Eyebrow>
 
                 {/* Utilities win over the display-lg component class, so the
-                   phone size is set here and the clamp restored at lg. */}
+                   phone size is set here and the clamp restored at lg.
+                   min-h reserves three lines (3.9em at this leading) on phones:
+                   door one wraps to two and door two to three, and without the
+                   reservation the shorter title would pull its arrow up. With
+                   the eyebrow above it also fixed, both stacks come out the
+                   same height, so the centred columns align row for row. */}
                 <h2
                   className={[
-                    "display-lg trm mt-3 w-full text-[22px] leading-[1.3]",
+                    "display-lg trm mt-6 min-h-[3.9em] w-full text-[22px] leading-[1.3]",
+                    "md:mt-3 md:min-h-0",
                     "lg:mt-5 lg:w-[90%] lg:text-[clamp(32px,4.8vw,48px)] lg:leading-[1.04]",
                     door.titleWidth,
                     dark ? "text-bone" : "text-ink",
@@ -179,7 +185,7 @@ export default function HomePage() {
                   className={[
                     // Sits with the title on phones; mt-auto still pins it to
                     // the bottom of the card from md up.
-                    "mt-6 pt-0 inline-flex items-center gap-2 self-start text-[12px] font-medium",
+                    "mt-10 pt-0 inline-flex items-center gap-2 self-start text-[12px] font-medium",
                     "md:mt-auto md:pt-8 lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
                     dark ? "text-bone" : "text-ink",
                   ].join(" ")}
