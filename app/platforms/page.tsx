@@ -1,18 +1,18 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { CredibilityBar } from "@/components/credibility-bar"
-import { PlatformScene } from "@/components/platform-scene"
-import { ButtonLink, Eyebrow, SectionHead } from "@/components/brand"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { CredibilityBar } from "@/components/credibility-bar";
+import { PlatformScene } from "@/components/platform-scene";
+import { ButtonLink, Eyebrow, SectionHead } from "@/components/brand";
 
 export const metadata: Metadata = {
   title: "For platforms — Cross-platform harm dispatch | Astan",
   description:
     "The 911 dispatcher for the internet. When a bad actor is caught on one platform, Astan dispatches a coordinated, privacy-preserving response to every connected platform in seconds.",
   alternates: { canonical: "https://astan.ai/platforms" },
-}
+};
 
 const contrast = [
   {
@@ -27,7 +27,7 @@ const contrast = [
     withAstan:
       "Report once, protected everywhere. The response travels; the raw evidence does not.",
   },
-]
+];
 
 const flow = [
   {
@@ -45,7 +45,7 @@ const flow = [
     title: "Audit",
     text: "Every dispatch, verdict and action lands in a tamper-proof record a regulator can read.",
   },
-]
+];
 
 export default function PlatformsPage() {
   return (
@@ -68,8 +68,8 @@ export default function PlatformsPage() {
           <div className="order-1 flex items-center px-6 py-20 md:px-10 md:py-28 lg:order-2 lg:pl-14 lg:pr-[max(2.5rem,calc((100vw-1140px)/2))]">
             <div className="w-full">
               <Eyebrow className="text-teal">Door one · platforms</Eyebrow>
-              <h1 className="display-xl mt-5 max-w-[16ch] text-ink">
-                The 911 dispatcher for the internet
+              <h1 className="display-xl mt-5 max-w-[28ch] text-ink">
+                Report once, solve everywhere
               </h1>
               <p className="lede mt-7 max-w-[52ch] text-slate">
                 When a bad actor is caught on one platform, nothing happens
@@ -92,7 +92,6 @@ export default function PlatformsPage() {
         <section className="border-t border-hairline bg-paper px-6 py-24 md:px-10">
           <div className="mx-auto max-w-[1140px]">
             <SectionHead
-              id="AST-P01"
               title="Harm moves laterally. The response never did."
               lede="Attackers never respected the org chart, and they never respected the platform boundary either. Every party sees one fragment of the same actor."
             />
@@ -128,7 +127,7 @@ export default function PlatformsPage() {
         <section className="grid border-t border-hairline bg-teal lg:grid-cols-2">
           <div className="flex items-center px-6 py-24 md:px-10 lg:pl-[max(2.5rem,calc((100vw-1140px)/2))] lg:pr-16">
             <div className="w-full">
-              <Eyebrow className="text-[#cfdde1]">The beachhead</Eyebrow>
+              <Eyebrow className="text-[#cfdde1]">The proof</Eyebrow>
               <h2 className="display-md mt-5 max-w-[20ch] text-bone">
                 Child safety: the one harm no platform can walk away from
               </h2>
@@ -156,14 +155,16 @@ export default function PlatformsPage() {
         <section className="border-t border-hairline bg-paper px-6 py-24 md:px-10">
           <div className="mx-auto max-w-[1140px]">
             <SectionHead
-              id="AST-P02"
               title="Detect, dispatch, audit"
               lede="Raw user data never leaves an organization's boundary. Only a privacy-protected behavioral signal travels."
             />
 
             <div className="grid gap-6 md:grid-cols-3">
               {flow.map((item) => (
-                <div key={item.step} className="border border-hairline bg-card p-7">
+                <div
+                  key={item.step}
+                  className="border border-hairline bg-card p-7"
+                >
                   <p className="identifier mb-5 text-teal">{item.step}</p>
                   <h3 className="display-sm mb-3">{item.title}</h3>
                   <p className="text-[14px] leading-relaxed text-slate">
@@ -173,14 +174,6 @@ export default function PlatformsPage() {
               ))}
             </div>
 
-            <div className="mt-10">
-              <Link
-                href="/how-it-works"
-                className="text-[13.5px] font-medium text-teal transition-colors hover:text-teal-deep"
-              >
-                How the protocol works →
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -193,9 +186,9 @@ export default function PlatformsPage() {
               Bring your platform into the response layer
             </h2>
             <p className="lede mt-6 text-on-ink">
-              We are running pilots with interaction-based platforms. Tell us what
-              you are seeing and we will show you what a dispatched response looks
-              like.
+              We are running pilots with interaction-based platforms. Tell us
+              what you are seeing and we will show you what a dispatched
+              response looks like.
             </p>
             <div className="mt-11">
               <ButtonLink href="/contact#pilot" variant="on-ink">
@@ -208,5 +201,5 @@ export default function PlatformsPage() {
 
       <SiteFooter />
     </div>
-  )
+  );
 }

@@ -8,20 +8,11 @@ const columns = [
     links: [
       { href: "/platforms", label: "Harm dispatch" },
       { href: "/use-cases", label: "Use cases" },
-      { href: "/how-it-works", label: "How it works" },
     ],
   },
   {
     heading: "Enterprises",
-    links: [
-      { href: "/enterprises", label: "Agent governance" },
-      { href: "/why-now", label: "Why now" },
-      {
-        href: "https://thelanguageproblem.com",
-        label: "The Language Problem",
-        external: true,
-      },
-    ],
+    links: [{ href: "/enterprises", label: "Agent governance" }],
   },
   {
     heading: "Engage",
@@ -60,23 +51,12 @@ export function SiteFooter() {
               <ul className="mt-5 space-y-3">
                 {column.links.map((link) => (
                   <li key={link.href}>
-                    {"external" in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[13.5px] text-on-ink transition-colors hover:text-bone"
-                      >
-                        {link.label} ↗
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="text-[13.5px] text-on-ink transition-colors hover:text-bone"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
+                    <Link
+                      href={link.href}
+                      className="text-[13.5px] text-on-ink transition-colors hover:text-bone"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

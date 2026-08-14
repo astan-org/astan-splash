@@ -18,10 +18,14 @@ const MARKS = {
   /* Heights are tuned per mark so the marks balance optically rather than
      mathematically: wordmarks sit shorter than square marks at equal presence. */
   patent: { src: "/logos/patent.png", ratio: 1.0, h: 25 },
-  ncmec: { src: "/logos/ncmec.png", ratio: 1.0, h: 25 },
   nvidia: { src: "/logos/nvidia.png", ratio: 1.33, h: 20 },
   meta: { src: "/logos/meta.png", ratio: 1.5, h: 19 },
-  interpol: { src: "/logos/interpol.png", ratio: 5.53, h: 13 },
+  google: { src: "/logos/google.png", ratio: 3.06, h: 22 },
+  microsoft: { src: "/logos/microsoft.png", ratio: 4.5, h: 18 },
+  capitalOne: { src: "/logos/capital-one.png", ratio: 2.79, h: 22 },
+  // The block-letter mark alone — the full lockup's three lines of wordmark
+  // are unreadable at pedigree size.
+  mit: { src: "/logos/mit.png", ratio: 1.89, h: 20 },
   mandiant: { src: "/logos/mandiant.png", ratio: 8.92, h: 12 },
   goldman: { src: "/logos/goldman-sachs.png", ratio: 2.31, h: 24 },
 } satisfies Record<string, Mark>
@@ -41,8 +45,11 @@ function LogoMask({
       aria-label={label}
       className={cn("inline-block shrink-0 bg-current", className)}
       style={{
-        height: `${mark.h}px`,
-        width: `${Math.round(mark.h * mark.ratio)}px`,
+        /* Sized in em against a 16px baseline, so the tuned heights hold as
+           px wherever the font-size is 16 — and the whole pedigree row can be
+           scaled as one unit by setting a font-size on its container. */
+        height: `${mark.h / 16}em`,
+        width: `${Math.round(mark.h * mark.ratio) / 16}em`,
         WebkitMaskImage: `url("${mark.src}")`,
         maskImage: `url("${mark.src}")`,
         WebkitMaskRepeat: "no-repeat",
@@ -75,19 +82,17 @@ const facts = [
     value: "Station F (Paris) and New York",
     icon: MapPin,
   },
-  {
-    label: "Reporting",
-    value: "Integrated with NCMEC",
-    mark: MARKS.ncmec,
-    markLabel: "Child safety reporting",
-  },
 ]
 
+/* Alphabetical — no ranking implied. */
 const pedigree = [
-  { mark: MARKS.meta, name: "Meta", note: "Trust & Safety across 50 countries" },
-  { mark: MARKS.interpol, name: "INTERPOL" },
-  { mark: MARKS.mandiant, name: "Mandiant" },
+  { mark: MARKS.capitalOne, name: "Capital One" },
   { mark: MARKS.goldman, name: "Goldman Sachs" },
+  { mark: MARKS.google, name: "Google" },
+  { mark: MARKS.mandiant, name: "Mandiant" },
+  { mark: MARKS.meta, name: "Meta" },
+  { mark: MARKS.microsoft, name: "Microsoft" },
+  { mark: MARKS.mit, name: "MIT" },
 ]
 
 export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) {
@@ -109,7 +114,7 @@ export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) 
 
         <dl
           className={cn(
-            "mt-8 grid gap-px border-t sm:grid-cols-2 lg:grid-cols-4",
+            "mt-8 grid gap-px border-t sm:grid-cols-2 lg:grid-cols-3",
             hairline,
           )}
         >
@@ -122,7 +127,7 @@ export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) 
               >
                 <div
                   className={cn(
-                    "mb-5 flex h-[25px] items-center",
+                    "mb-5 flex h-[25px] items-center text-[16px]",
                     dark ? "text-bone" : "text-ink",
                   )}
                 >
@@ -156,10 +161,13 @@ export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) 
 
         <div className="mt-10">
           <Eyebrow className={dark ? "text-on-ink-muted" : "text-muted"}>
-            Team drawn from
+            The team
           </Eyebrow>
 
-          <ul className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6">
+          {/* One line at every width, spread edge to edge. The viewport-scaled
+             font-size shrinks the marks in step below ~1140px so the row never
+             wraps; justify-between spends the slack as even gaps above it. */}
+          <ul className="mt-6 flex items-center justify-between gap-x-1 text-[clamp(8px,2.8vw,20px)]">
             {pedigree.map((item) => (
               <li
                 key={item.name}
@@ -169,16 +177,6 @@ export function CredibilityBar({ tone = "light" }: { tone?: "light" | "dark" }) 
                 )}
               >
                 <LogoMask mark={item.mark} label={item.name} />
-                {item.note && (
-                  <span
-                    className={cn(
-                      "text-[13.5px]",
-                      dark ? "text-on-ink" : "text-slate",
-                    )}
-                  >
-                    {item.note}
-                  </span>
-                )}
               </li>
             ))}
           </ul>

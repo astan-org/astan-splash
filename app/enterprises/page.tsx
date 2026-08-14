@@ -84,7 +84,7 @@ export default function EnterprisesPage() {
             <div className="w-full">
               <Eyebrow className="text-teal">Door two · enterprises</Eyebrow>
               <h1 className="display-xl mt-5 max-w-[17ch] text-ink">
-                Runtime governance for AI agents
+                Frontier governance for AI agents
               </h1>
               <p className="lede mt-7 max-w-[52ch] text-slate">
                 Your governance council approved the agent. It shipped to
@@ -118,12 +118,47 @@ export default function EnterprisesPage() {
           </div>
         </section>
 
+        {/* Pull quote — the CSO line. Ink ground, one idea only.
+           The portrait is illustrative stock, not the person quoted; see the
+           caption, which says so plainly rather than letting the juxtaposition
+           imply an attribution the quote deliberately withholds. */}
+        <section className="grid bg-ink lg:grid-cols-2">
+          <div className="flex items-center px-6 py-24 md:px-10 lg:pl-[max(2.5rem,calc((100vw-1140px)/2))] lg:pr-14">
+            <div className="w-full">
+              <Eyebrow className="text-on-ink-muted">
+                The industry position
+              </Eyebrow>
+              <blockquote className="display-md mt-6 max-w-[24ch] text-bone">
+                Astan is the &ldquo;human in the loop&rdquo; governance theater
+                at machine speed.
+              </blockquote>
+              <p className="mt-7 max-w-[52ch] text-[15px] leading-relaxed text-on-ink">
+                Controls have to live outside the agent. An agent cannot be the
+                arbiter of its own scope, and a human cannot review a decision
+                that already executed. That is exactly what we built.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/3] border-t border-[rgba(237,230,214,0.16)] sm:aspect-video lg:aspect-auto lg:border-t-0 lg:border-l">
+            <Image
+              src="/elder.jpg"
+              alt="Studio portrait of an older man in a suit"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-[60%_13%]"
+            />
+            <span className="identifier absolute bottom-4 left-5 text-[9.5px] tracking-[0.08em] text-[rgba(255,255,255,0.92)]">
+              {/* Illustrative. Not the executive quoted. */}
+            </span>
+          </div>
+        </section>
+
         {/* Capabilities */}
         <section className="border-t border-hairline bg-paper px-6 py-24 md:px-10">
           <div className="mx-auto max-w-[1140px]">
             <SectionHead
-              id="AST-E01"
-              title="Policy, inventory, and an off switch"
+              title="We prove, we record and we enforce"
               lede="The three things a security leader deploying agents is usually missing, delivered as one control plane."
             />
 
@@ -158,93 +193,13 @@ export default function EnterprisesPage() {
           </div>
         </section>
 
-        {/* Pull quote — the CSO line. Ink ground, one idea only.
-           The portrait is illustrative stock, not the person quoted; see the
-           caption, which says so plainly rather than letting the juxtaposition
-           imply an attribution the quote deliberately withholds. */}
-        <section className="grid bg-ink lg:grid-cols-2">
-          <div className="flex items-center px-6 py-24 md:px-10 lg:pl-[max(2.5rem,calc((100vw-1140px)/2))] lg:pr-14">
-            <div className="w-full">
-              <Eyebrow className="text-on-ink-muted">
-                The industry position
-              </Eyebrow>
-              <blockquote className="display-md mt-6 max-w-[24ch] text-bone">
-                A major cloud provider&rsquo;s Chief Security Officer publicly
-                called &ldquo;human in the loop&rdquo; governance theater at
-                machine speed.
-              </blockquote>
-              <p className="mt-7 max-w-[52ch] text-[15px] leading-relaxed text-on-ink">
-                Controls have to live outside the agent. An agent cannot be the
-                arbiter of its own scope, and a human cannot review a decision
-                that already executed. That is exactly what we built.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative aspect-[4/3] border-t border-[rgba(237,230,214,0.16)] sm:aspect-video lg:aspect-auto lg:border-t-0 lg:border-l">
-            <Image
-              src="/elder.jpg"
-              alt="Studio portrait of an older man in a suit"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-[60%_13%]"
-            />
-            <span className="identifier absolute bottom-4 left-5 text-[9.5px] tracking-[0.08em] text-[rgba(255,255,255,0.92)]">
-              Illustrative. Not the executive quoted.
-            </span>
-          </div>
-        </section>
-
-        {/* Verdicts */}
-        <section className="border-t border-hairline bg-bone px-6 py-24 md:px-10">
-          <div className="mx-auto max-w-[1140px]">
-            <SectionHead
-              id="AST-E02"
-              title="Three verdicts, recorded against the control they touch"
-            />
-
-            <div className="border border-hairline bg-card">
-              <div className="border-b border-hairline px-7 py-5">
-                <Identifier>AST-CTRL-0184 · Agent scope containment</Identifier>
-              </div>
-              {verdicts.map((verdict) => (
-                <div
-                  key={verdict.label}
-                  className="flex flex-wrap items-center gap-6 border-b border-hairline px-7 py-6 last:border-b-0"
-                >
-                  <div className="w-32 flex-none">
-                    <StatusBadge tone={verdict.tone}>
-                      {verdict.label}
-                    </StatusBadge>
-                  </div>
-                  <p className="min-w-0 flex-1 text-[14px] text-slate">
-                    {verdict.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10">
-              <Link
-                href="https://thelanguageproblem.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13.5px] font-medium text-teal transition-colors hover:text-teal-deep"
-              >
-                The Language Problem — our free taxonomy bridging security and
-                trust &amp; safety vocabularies ↗
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <CredibilityBar tone="dark" />
 
         {/* CTA */}
         <section className="border-t border-hairline bg-paper px-6 py-24 md:px-10">
           <div className="mx-auto max-w-[1140px]">
             <h2 className="display-lg max-w-[20ch] text-ink">
-              Put a control layer around the agents you already shipped
+              Put a control layer around the agents you already have
             </h2>
             <p className="lede mt-6 text-slate">
               No rip-and-replace. We start above the gateway you already run.

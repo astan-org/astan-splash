@@ -5,8 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
-/* How it works and Why now are intentionally not in the top nav — they stay
-   reachable from the footer and from in-page links. */
 const nav = [
   { href: "/platforms", label: "For platforms" },
   { href: "/enterprises", label: "For enterprises" },

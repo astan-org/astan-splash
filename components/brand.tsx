@@ -104,46 +104,31 @@ export function StatusBadge({
   )
 }
 
-/* Section heading block: mono section id + display title, per the guide's
-   sec-head idiom. */
+/* Section heading block: display title over an optional lede. */
 export function SectionHead({
-  id,
   title,
   lede,
   tone = "light",
 }: {
-  id: string
   title: string
   lede?: string
   tone?: "light" | "dark"
 }) {
   return (
-    <div className="mb-13 flex flex-wrap items-baseline gap-8">
-      <div
-        className={cn(
-          "identifier flex-none pt-3 text-[11.5px] font-medium tracking-[0.1em]",
-          tone === "dark" ? "text-teal-soft" : "text-teal",
-        )}
-      >
-        {id}
-      </div>
-      <div className="min-w-0 flex-1 basis-[340px]">
-        <h2
-          className={cn("display-md", tone === "dark" ? "text-bone" : "text-ink")}
+    <div className="mb-13">
+      <h2 className={cn("display-md", tone === "dark" ? "text-bone" : "text-ink")}>
+        {title}
+      </h2>
+      {lede ? (
+        <p
+          className={cn(
+            "lede mt-4",
+            tone === "dark" ? "text-on-ink" : "text-slate",
+          )}
         >
-          {title}
-        </h2>
-        {lede ? (
-          <p
-            className={cn(
-              "lede mt-4",
-              tone === "dark" ? "text-on-ink" : "text-slate",
-            )}
-          >
-            {lede}
-          </p>
-        ) : null}
-      </div>
+          {lede}
+        </p>
+      ) : null}
     </div>
   )
 }

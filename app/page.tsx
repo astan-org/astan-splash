@@ -17,9 +17,9 @@ const doors = [
     title: "Cross-platform harm dispatch",
     lede: "The 911 dispatcher for the internet. A bad actor caught on one platform is a bad actor everywhere. Report once, protected everywhere.",
     points: [
-      "Coordinated response across connected platforms",
-      "Child safety as the beachhead",
-      "Mandated reporting filed automatically",
+      // "Coordinated response across connected platforms",
+      // "Child safety as the beachhead",
+      // "Mandated reporting filed automatically",
     ],
     cta: "For platforms",
     tone: "dark" as const,
@@ -31,12 +31,12 @@ const doors = [
   {
     href: "/enterprises",
     eyebrow: "Door two · enterprises",
-    title: "Runtime governance for AI agents",
+    title: "Frontier governance for AI agents",
     lede: "Your council approved the agent. It shipped. Now no one can say who is watching it. Astan watches, judges, and can stop agents in real time.",
     points: [
-      "Sits above any existing agent gateway",
-      "Millisecond allow, block or hold verdicts",
-      "Operator kill switch and tamper-proof audit trail",
+      // "Sits above any existing agent gateway",
+      // "Millisecond allow, block or hold verdicts",
+      // "Operator kill switch and tamper-proof audit trail",
     ],
     cta: "For enterprises",
     tone: "light" as const,
@@ -59,8 +59,8 @@ export default function HomePage() {
               <Eyebrow className="text-teal-soft">
                 One protocol · two doors
               </Eyebrow>
-              <h1 className="display-xl mx-auto mt-5 max-w-[16ch] text-bone">
-                <AnimatedWords text="The response layer for AI-generated harm" />
+              <h1 className="display-xl mx-auto mt-5 max-w-[28ch] text-bone">
+                <AnimatedWords text="The decision and response layer for AI-generated harm" />
               </h1>
               <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
                 One confirmed detection becomes coordinated, privacy-preserving,
@@ -85,9 +85,12 @@ export default function HomePage() {
         {/* Five shared rows — eyebrow, title, description, points, CTA — so both
            doors align band for band however the copy wraps. The points row takes
            the free space, which keeps both CTAs on the bottom edge. */}
+        {/* Two columns at every width. On phones the doors stay side by side at
+           50% each and drop to eyebrow, title and CTA — enough to choose a
+           path, not enough to read. The full copy lives behind each door. */}
         <section
           id="doors"
-          className="grid flex-1 grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto_1fr_auto]"
+          className="grid flex-1 grid-cols-2 lg:grid-rows-[auto_auto_auto_1fr_auto]"
         >
           {doors.map((door) => {
             const dark = door.tone === "dark";
@@ -96,20 +99,31 @@ export default function HomePage() {
                 key={door.href}
                 href={door.href}
                 className={[
-                  "group relative flex flex-col border-t px-6 py-16 transition-colors md:px-10 md:py-20",
+                  "group relative flex flex-col border-t px-5 py-10 transition-colors sm:px-6 md:px-10 md:py-20",
                   "lg:row-span-5 lg:grid lg:grid-rows-subgrid",
                   dark
                     ? "border-[rgba(237,230,214,0.16)] bg-ink-raised hover:bg-[#2a3766]"
-                    : "border-hairline bg-bone hover:bg-[#e5dcc8] lg:border-l",
+                    : // border-l at every width now: the doors sit side by side on phones too.
+                      "border-hairline bg-bone hover:bg-[#e5dcc8] border-l",
                 ].join(" ")}
               >
-                <Eyebrow className={dark ? "text-teal-soft" : "text-teal"}>
+                {/* Reserves three lines on phones so both titles start on the
+                   same baseline even though the eyebrows wrap differently. */}
+                <Eyebrow
+                  className={[
+                    "min-h-[44px] lg:min-h-0",
+                    dark ? "text-teal-soft" : "text-teal",
+                  ].join(" ")}
+                >
                   {door.eyebrow}
                 </Eyebrow>
 
+                {/* Utilities win over the display-lg component class, so the
+                   phone size is set here and the clamp restored at lg. */}
                 <h2
                   className={[
-                    "display-lg trm mt-5",
+                    "display-lg trm mt-3 w-full text-[20px] leading-[1.15]",
+                    "lg:mt-5 lg:w-[90%] lg:text-[clamp(32px,4.8vw,48px)] lg:leading-[1.04]",
                     door.titleWidth,
                     dark ? "text-bone" : "text-ink",
                   ].join(" ")}
@@ -119,7 +133,7 @@ export default function HomePage() {
 
                 <p
                   className={[
-                    "mt-6 max-w-[46ch] text-[15px] leading-relaxed",
+                    "mt-6 hidden max-w-[46ch] text-[15px] leading-relaxed lg:block",
                     dark ? "text-on-ink" : "text-slate",
                   ].join(" ")}
                 >
@@ -128,7 +142,7 @@ export default function HomePage() {
 
                 <ul
                   className={[
-                    "mt-10 border-t",
+                    "mt-10 hidden border-t lg:block",
                     dark
                       ? "border-[rgba(237,230,214,0.16)]"
                       : "border-hairline",
@@ -151,7 +165,9 @@ export default function HomePage() {
 
                 <span
                   className={[
-                    "mt-12 inline-flex items-center gap-3 self-start text-[13.5px] font-medium",
+                    // mt-auto pins the CTA to the bottom of the shorter phone card.
+                    "mt-auto pt-8 inline-flex items-center gap-2 self-start text-[12px] font-medium",
+                    "lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
                     dark ? "text-bone" : "text-ink",
                   ].join(" ")}
                 >

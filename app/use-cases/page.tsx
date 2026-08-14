@@ -1,29 +1,27 @@
-import type { Metadata } from "next"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { CredibilityBar } from "@/components/credibility-bar"
-import { ButtonLink, Eyebrow, Identifier } from "@/components/brand"
+import type { Metadata } from "next";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { CredibilityBar } from "@/components/credibility-bar";
+import { ButtonLink, Eyebrow } from "@/components/brand";
 
 export const metadata: Metadata = {
   title: "Use cases — What the response layer changes | Astan",
   description:
-    "Five scenarios where a fragmented response fails today, and what a coordinated, audit-ready one does instead: child safety, AI-generated CSAM, agent misbehavior, cross-platform fraud, and financial-sector agent governance.",
+    "Five scenarios where a fragmented response fails today, and what a coordinated, audit-ready one does instead: child safety, AI-generated CSAM, agent misbehavior, cross-organization agent containment, and financial-sector agent governance.",
   alternates: { canonical: "https://astan.ai/use-cases" },
-}
+};
 
 /* Brief §4 (P1). Written as archetypes. No platform or partner is named. */
 const scenarios = [
   {
-    id: "AST-UC-01",
     door: "Platforms",
     title: "Child safety across platforms",
     today:
-      "A predator is banned on one platform. He reappears on the next one in minutes, with a new handle and the same intent. Each platform sees a first-time account.",
+      "A predator causes an harm in one platform. He reappears on the next one within minutes, repeating the pattern.",
     withAstan:
       "The confirmed detection is dispatched to every connected platform in seconds, and the mandated report is filed automatically — without the raw evidence ever leaving the originating platform.",
   },
   {
-    id: "AST-UC-02",
     door: "Platforms",
     title: "AI-generated CSAM",
     today:
@@ -32,7 +30,6 @@ const scenarios = [
       "Astan classifies the conduct, not just the known signature, so material that has never been seen before is still caught and still dispatched.",
   },
   {
-    id: "AST-UC-03",
     door: "Enterprises",
     title: "Enterprise AI agent misbehavior",
     today:
@@ -41,24 +38,22 @@ const scenarios = [
       "Astan quarantines the agent at the moment it steps out of scope, and notifies the vendor who sold it — who would otherwise never know.",
   },
   {
-    id: "AST-UC-04",
-    door: "Platforms",
-    title: "Cross-platform fraud and scams",
+    door: "Enterprises",
+    title: "Cross-organization agent containment",
     today:
-      "A scam starts on a social platform, moves to a messaging app, and ends at a bank transfer, all inside an hour. Each party sees one fragment and none of them sees the scam.",
+      "An agent from one company reaches another company's production systems. Neither side holds a record of whose agent it was or under whose policy it acted, and neither can switch it off.",
     withAstan:
-      "Astan connects the fragments across organizations and dispatches the response while the money is still in motion.",
+      "Both sides hold the same accountable record — who ran the agent, under whose policy, against whose systems — and the same ability to cut it off at the boundary.",
   },
   {
-    id: "AST-UC-05",
     door: "Enterprises",
     title: "Financial-sector agent governance",
     today:
       "A security leader is asked how many AI agents are in production, what policy governs them, and how to switch one off. There is no answer to any of the three.",
     withAstan:
-      "Astan is the control plane that provides all three: an inventory, an enforced policy, and an off switch that does not require a deploy.",
+      "Astan is the control plane that integrates with your existing controls to provide all three: an inventory, an enforced policy, and an off switch that does not require a deploy.",
   },
-]
+];
 
 export default function UseCasesPage() {
   return (
@@ -75,31 +70,26 @@ export default function UseCasesPage() {
               What changes when the response is coordinated
             </h1>
             <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
-              Five scenarios, written as archetypes. Each one is a case where the
-              detection already happened and the response is what failed.
+              Five scenarios, written as archetypes. Each one is a case where
+              the detection already happened and the response is what failed.
             </p>
           </div>
         </section>
 
         {scenarios.map((scenario, index) => {
-          const onBone = index % 2 === 1
+          const onBone = index % 2 === 1;
           return (
             <section
-              key={scenario.id}
+              key={scenario.title}
               className={[
                 "border-t border-hairline px-6 py-20 md:px-10",
                 onBone ? "bg-bone" : "bg-paper",
               ].join(" ")}
             >
               <div className="mx-auto max-w-[1140px]">
-                <div className="mb-10 flex flex-wrap items-baseline gap-x-8 gap-y-4">
-                  <Identifier className="flex-none pt-2 text-teal">
-                    {scenario.id}
-                  </Identifier>
-                  <div className="min-w-0 flex-1 basis-[340px]">
-                    <Eyebrow className="mb-3">{scenario.door}</Eyebrow>
-                    <h2 className="display-md text-ink">{scenario.title}</h2>
-                  </div>
+                <div className="mb-10">
+                  <Eyebrow className="mb-3">{scenario.door}</Eyebrow>
+                  <h2 className="display-md text-ink">{scenario.title}</h2>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
@@ -118,7 +108,7 @@ export default function UseCasesPage() {
                 </div>
               </div>
             </section>
-          )
+          );
         })}
 
         <CredibilityBar tone="dark" />
@@ -145,5 +135,5 @@ export default function UseCasesPage() {
 
       <SiteFooter />
     </div>
-  )
+  );
 }
