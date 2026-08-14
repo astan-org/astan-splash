@@ -59,7 +59,9 @@ export default function HomePage() {
               <Eyebrow className="text-teal-soft">
                 One protocol · two doors
               </Eyebrow>
-              <h1 className="display-xl mx-auto mt-5 max-w-[28ch] text-bone">
+              {/* display-xl sets 0.98, which is too tight once the heading
+                 wraps to four or five lines on a phone. */}
+              <h1 className="display-xl mx-auto mt-5 max-w-[28ch] leading-[1.12] text-bone md:leading-[0.98]">
                 <AnimatedWords text="The decision and response layer for AI-generated harm" />
               </h1>
               <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
@@ -88,9 +90,13 @@ export default function HomePage() {
         {/* Two columns at every width. On phones the doors stay side by side at
            50% each and drop to eyebrow, title and CTA — enough to choose a
            path, not enough to read. The full copy lives behind each door. */}
+        {/* The doors are the point of the page, so on phones they hold a
+           deliberate share of the viewport rather than collapsing to the
+           height of three lines of copy between a tall hero and a tall
+           footer. Released at md, where the copy alone carries the block. */}
         <section
           id="doors"
-          className="grid flex-1 grid-cols-2 lg:grid-rows-[auto_auto_auto_1fr_auto]"
+          className="grid min-h-[70svh] flex-1 grid-cols-2 md:min-h-0 lg:grid-rows-[auto_auto_auto_1fr_auto]"
         >
           {doors.map((door) => {
             const dark = door.tone === "dark";
@@ -99,7 +105,10 @@ export default function HomePage() {
                 key={door.href}
                 href={door.href}
                 className={[
-                  "group relative flex flex-col border-t px-5 py-10 transition-colors sm:px-6 md:px-10 md:py-20",
+                  // Centred on phones: with the door now taller than its copy,
+                  // a bottom-pinned CTA would leave a hole in the middle.
+                  "group relative flex flex-col justify-center border-t px-4 py-16 transition-colors",
+                  "sm:px-6 md:justify-start md:px-10 md:py-20",
                   "lg:row-span-5 lg:grid lg:grid-rows-subgrid",
                   dark
                     ? "border-[rgba(237,230,214,0.16)] bg-ink-raised hover:bg-[#2a3766]"
@@ -108,10 +117,13 @@ export default function HomePage() {
                 ].join(" ")}
               >
                 {/* Reserves three lines on phones so both titles start on the
-                   same baseline even though the eyebrows wrap differently. */}
+                   same baseline even though the eyebrows wrap differently.
+                   Dropped a size and de-tracked there too: at 10.5px/0.26em it
+                   wrapped to three dense lines and read as loud as the title. */}
                 <Eyebrow
                   className={[
-                    "min-h-[44px] lg:min-h-0",
+                    "min-h-[38px] text-[9px] tracking-[0.15em]",
+                    "md:min-h-[44px] md:text-[10.5px] md:tracking-[0.26em] lg:min-h-0",
                     dark ? "text-teal-soft" : "text-teal",
                   ].join(" ")}
                 >
@@ -122,7 +134,7 @@ export default function HomePage() {
                    phone size is set here and the clamp restored at lg. */}
                 <h2
                   className={[
-                    "display-lg trm mt-3 w-full text-[20px] leading-[1.15]",
+                    "display-lg trm mt-3 w-full text-[22px] leading-[1.3]",
                     "lg:mt-5 lg:w-[90%] lg:text-[clamp(32px,4.8vw,48px)] lg:leading-[1.04]",
                     door.titleWidth,
                     dark ? "text-bone" : "text-ink",
@@ -165,9 +177,10 @@ export default function HomePage() {
 
                 <span
                   className={[
-                    // mt-auto pins the CTA to the bottom of the shorter phone card.
-                    "mt-auto pt-8 inline-flex items-center gap-2 self-start text-[12px] font-medium",
-                    "lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
+                    // Sits with the title on phones; mt-auto still pins it to
+                    // the bottom of the card from md up.
+                    "mt-6 pt-0 inline-flex items-center gap-2 self-start text-[12px] font-medium",
+                    "md:mt-auto md:pt-8 lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
                     dark ? "text-bone" : "text-ink",
                   ].join(" ")}
                 >
