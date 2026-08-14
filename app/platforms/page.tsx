@@ -60,11 +60,12 @@ export default function PlatformsPage() {
         {/* No border-b here: the next section carries border-t, and two
            adjacent 1px rules would render as a 2px line. */}
         <section className="grid bg-bone lg:grid-cols-2">
-          {/* Scene first in the DOM so it sits left on wide screens, and reads
-             before the copy when the columns stack. */}
-          <PlatformScene className="aspect-[4/3] border-b border-hairline sm:aspect-video lg:aspect-auto lg:border-b-0 lg:border-r" />
+          {/* Scene is first in the DOM so it sits left on wide screens. Below
+             lg the order flips so the copy leads and the scene follows it —
+             hence border-t when stacked, border-r when side by side. */}
+          <PlatformScene className="order-2 aspect-[4/3] border-t border-hairline sm:aspect-video lg:order-1 lg:aspect-auto lg:border-t-0 lg:border-r" />
 
-          <div className="flex items-center px-6 py-20 md:px-10 md:py-28 lg:pl-14 lg:pr-[max(2.5rem,calc((100vw-1140px)/2))]">
+          <div className="order-1 flex items-center px-6 py-20 md:px-10 md:py-28 lg:order-2 lg:pl-14 lg:pr-[max(2.5rem,calc((100vw-1140px)/2))]">
             <div className="w-full">
               <Eyebrow className="text-teal">Door one · platforms</Eyebrow>
               <h1 className="display-xl mt-5 max-w-[16ch] text-ink">
