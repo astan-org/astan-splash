@@ -1,31 +1,31 @@
-import Image from "next/image"
+import type { Metadata } from "next"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+import { Eyebrow } from "@/components/brand"
+
+export const metadata: Metadata = {
+  title: "Privacy policy | Astan",
+  description:
+    "How Astan collects, uses, retains and protects information across the cross-platform response layer.",
+  alternates: { canonical: "https://astan.ai/privacy-policy" },
+}
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <a href="/">
-              <Image src="/logo.png" alt="Astan Logo" width={120} height={40} className="h-10 w-auto" />
-            </a>
-          </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              Home
-            </a>
-          </nav>
-        </div>
-      </header>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader tone="light" />
 
       {/* Privacy Policy Content */}
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold text-foreground mb-8">Cross-Platform Abuse Response - Privacy Policy</h1>
+      <main className="flex-1 px-6 py-20 md:px-10">
+        <div className="mx-auto max-w-[820px]">
+          <Eyebrow>Legal</Eyebrow>
+          <h1 className="display-lg mt-5 mb-12 text-ink">
+            Cross-platform abuse response — privacy policy
+          </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
+        <div className="max-w-none space-y-10 text-[15px] leading-relaxed text-slate">
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">1. Information We Collect</h2>
+            <h2 className="display-sm text-ink mb-4">1. Information We Collect</h2>
             <p>
               ASTAN INC. ("we," "our," or "us") collects information you provide directly to us when using our
               cross-platform social media safety reporting services. This includes:
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">2. How We Use Your Information</h2>
+            <h2 className="display-sm text-ink mb-4">2. How We Use Your Information</h2>
             <p>We use the information we collect to:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Provide, maintain, and improve our cross-platform reporting services</li>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">3. Information Sharing and Disclosure</h2>
+            <h2 className="display-sm text-ink mb-4">3. Information Sharing and Disclosure</h2>
             <p>We share your information only in the following circumstances:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Security and Protection</h2>
+            <h2 className="display-sm text-ink mb-4">4. Data Security and Protection</h2>
             <p>We implement enterprise-grade security measures to protect your information:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>End-to-end encryption for all data transmission</li>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">5. Data Retention</h2>
+            <h2 className="display-sm text-ink mb-4">5. Data Retention</h2>
             <p>
               We retain your information for as long as necessary to provide our services and comply with legal
               obligations. Specifically:
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">6. Your Privacy Rights</h2>
+            <h2 className="display-sm text-ink mb-4">6. Your Privacy Rights</h2>
             <p>You have the following rights regarding your personal information:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">7. International Data Transfers</h2>
+            <h2 className="display-sm text-ink mb-4">7. International Data Transfers</h2>
             <p>
               Your information may be transferred to and processed in countries other than your country of residence. We
               ensure appropriate safeguards are in place for international transfers, including:
@@ -144,7 +144,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">8. Children's Privacy</h2>
+            <h2 className="display-sm text-ink mb-4">8. Children's Privacy</h2>
             <p>
               Our services are not intended for individuals under the age of 18. We do not knowingly collect personal
               information from children under 18. If we become aware that we have collected such information, we will
@@ -153,22 +153,22 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">9. Contact Information</h2>
+            <h2 className="display-sm text-ink mb-4">9. Contact Information</h2>
             <p>
               If you have questions about this Privacy Policy, our data practices, or wish to exercise your privacy
               rights, please contact us:
             </p>
-            <div className="bg-blue-50/50 rounded-lg p-6 border border-blue-100 mt-4">
-              <p className="font-semibold text-foreground">ASTAN INC.</p>
+            <div className="mt-4 border border-hairline bg-card p-7">
+              <p className="font-medium text-ink">ASTAN INC.</p>
               <p>Privacy Officer</p>
               <p>131 Continental Dr, Suite 305</p>
               <p>Newark, DE 19713</p>
-              <p className="mt-2">Email: privacy@astan.io</p>
+              <p className="mt-2">Email: privacy@astan.ai</p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">10. Updates to This Policy</h2>
+            <h2 className="display-sm text-ink mb-4">10. Updates to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal
               requirements, or other factors. We will notify you of any material changes by:
@@ -183,8 +183,8 @@ export default function PrivacyPolicyPage() {
               We encourage you to review this Privacy Policy periodically to stay informed about how we protect your
               information.
             </p>
-            <p className="text-sm text-muted-foreground mt-6 p-4 bg-gray-50 rounded-lg">
-              <strong>Last Updated:</strong>{" "}
+            <p className="identifier mt-6 border border-hairline bg-card p-4 text-muted">
+              Last updated:{" "}
               {new Date().toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -192,20 +192,11 @@ export default function PrivacyPolicyPage() {
               })}
             </p>
           </section>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-gradient-to-b from-blue-50/30 to-white py-16 px-4">
-        <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <Image src="/logo.png" alt="Astan Logo" width={120} height={40} className="h-8 w-auto" />
           </div>
-          <p className="text-muted-foreground">
-            &copy; { new Date().getFullYear() } ASTAN INC. All rights reserved.
-          </p>
         </div>
-      </footer>
+      </main>
+
+      <SiteFooter />
     </div>
   )
 }

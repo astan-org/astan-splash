@@ -1,30 +1,43 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Space_Grotesk, DM_Sans } from "next/font/google"
+import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
-const spaceGrotesk = Space_Grotesk({
+// AST-05 Typography. Inter Tight for display, Inter for text,
+// JetBrains Mono restricted to identifiers.
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
 })
 
-const dmSans = DM_Sans({
+const interTight = Inter_Tight({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-dm-sans",
+  variable: "--font-inter-tight",
 })
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+})
+
+const SITE = "https://astan.ai"
 
 export const metadata: Metadata = {
-  title: "Astan.io: The AI Standard for Online Safety Compliance",
-  description: "We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
+  metadataBase: new URL(SITE),
+  title: "Astan — The response layer for AI-generated harm",
+  description:
+    "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations — in seconds.",
   alternates: {
-    canonical: "https://astan.io",
+    canonical: SITE,
   },
   openGraph: {
-    title: "Astan",
-    description: "The AI Standard for Online Safety Compliance. We are building the entire safety lifecycle — from proactive authentication and agentic tutoring to cross-platform incident response.",
-    url: "https://astan.io",
+    title: "Astan — The response layer for AI-generated harm",
+    description:
+      "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations — in seconds.",
+    url: SITE,
     siteName: "Astan",
     images: [
       {
@@ -44,8 +57,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased scroll-smooth`}>
-      <body className="font-sans">{children}</body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${interTight.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
+    >
+      <body className="font-sans bg-paper text-ink">{children}</body>
     </html>
   )
 }

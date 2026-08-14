@@ -3,12 +3,16 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/nodejs';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, topic } = await req.json();
 
     emailjs.init({
       publicKey: process.env.EMAILJS_PUBLIC_KEY!,
       privateKey: process.env.EMAILJS_PRIVATE_KEY!, // highly recommended
     });
+
+    // The EmailJS template only exposes name/email/message, so the selected door
+    // is prefixed onto the body rather than added as a new template variable.
+    const body = topic ? `[${topic}]\n\n${message}` : message;
 
     await emailjs.send(
       process.env.EMAILJS_SERVICE_ID!,
@@ -16,7 +20,7 @@ export async function POST(req: NextRequest) {
       {
         name: name,
         email: email,
-        message: message,
+        message: body,
       }
     );
 

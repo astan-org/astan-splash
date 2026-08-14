@@ -1,83 +1,83 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* ============================================================
+   Astan brand system v1.2  (AST-04 Colour, AST-05 Type, AST-06 Space)
+   Three tones of equal standing: Ink, Bone, Teal.
+   Flat colour only. The gradient exists in the mark and nowhere else.
+   ============================================================ */
 
 :root {
-  /* Updated color tokens to blue and white theme for Astan.io */
-  --background: oklch(1 0 0); /* Pure white */
-  --foreground: oklch(0.145 0 0); /* Dark gray for text */
-  --card: oklch(0.99 0 0); /* Very light blue-tinted white for cards */
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.5 0.2 240); /* Professional blue */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.02 240); /* Very light blue for accents */
-  --secondary-foreground: oklch(0.2 0.1 240);
-  --muted: oklch(0.97 0.01 240);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.94 0.03 240);
-  --accent-foreground: oklch(0.2 0.1 240);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.01 240);
-  --input: oklch(0.92 0.01 240);
-  --ring: oklch(0.5 0.2 240);
-  --chart-1: oklch(0.5 0.2 240);
-  --chart-2: oklch(0.6 0.15 220);
-  --chart-3: oklch(0.4 0.25 260);
-  --chart-4: oklch(0.7 0.1 200);
-  --chart-5: oklch(0.45 0.2 280);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.5 0.2 240);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.02 240);
-  --sidebar-accent-foreground: oklch(0.2 0.1 240);
-  --sidebar-border: oklch(0.92 0.01 240);
-  --sidebar-ring: oklch(0.5 0.2 240);
-}
+  /* --- Three tones --- */
+  --ink: #131c3d;
+  --bone: #ede6d6;
+  --teal: #0a6e86;
 
-.dark {
-  /* Updated dark mode colors to maintain blue theme */
-  --background: oklch(0.08 0.02 240);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.1 0.02 240);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.08 0.02 240);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.6 0.2 240);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.15 0.05 240);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.15 0.05 240);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.15 0.05 240);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.15 0.05 240);
-  --input: oklch(0.15 0.05 240);
-  --ring: oklch(0.6 0.2 240);
-  --chart-1: oklch(0.6 0.2 240);
-  --chart-2: oklch(0.7 0.15 220);
-  --chart-3: oklch(0.5 0.25 260);
-  --chart-4: oklch(0.8 0.1 200);
-  --chart-5: oklch(0.55 0.2 280);
-  --sidebar: oklch(0.1 0.02 240);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.6 0.2 240);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.15 0.05 240);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.15 0.05 240);
-  --sidebar-ring: oklch(0.6 0.2 240);
+  /* --- Supporting neutrals --- */
+  --ink-raised: #232e58; /* the only permitted step within the dark ground */
+  --slate: #3f4a73; /* secondary text on light, 6.9:1 on Bone */
+  --muted: #6e7391; /* captions and metadata, never body copy */
+  --hairline: #d8d0be; /* every rule and border, 1px, never 2 */
+  --paper: #f5f1e8; /* page canvas */
+  --card: #fdfcf9; /* card surface, warm white, never pure #FFF */
+  --teal-tint: #dfe9ec; /* a tint of tone three, not a fourth tone */
+  --teal-deep: #08596b; /* teal as small type on Bone, 6.4:1 */
+  --teal-soft: #5f97a6; /* teal legible on Ink */
+
+  /* --- Type on dark grounds --- */
+  --on-ink: #a8aec7; /* body copy on Ink */
+  --on-ink-muted: #8d93b0; /* labels and metadata on Ink */
+
+  /* --- Severity: muted and earthy, all clear 4.5:1 on Bone --- */
+  --pass: #1f6b4e;
+  --advisory: #7a5c22;
+  --high: #9c4a18;
+  --critical: #8e2226;
+
+  /* --- shadcn compatibility, remapped onto the brand --- */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card-foreground: var(--ink);
+  --popover: var(--card);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--bone);
+  --secondary: var(--teal-tint);
+  --secondary-foreground: var(--ink);
+  --muted-foreground: var(--muted);
+  --accent: var(--teal);
+  --accent-foreground: var(--bone);
+  --destructive: var(--critical);
+  --destructive-foreground: var(--bone);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--teal);
+
+  /* AST-06: corner radius is zero everywhere. */
+  --radius: 0px;
+
+  /* Height of the sticky header: logo/button 36px between 20px of padding.
+     Lets a hero fill exactly the viewport that is left under it. */
+  --header-h: 76px;
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-bone: var(--bone);
+  --color-teal: var(--teal);
+  --color-teal-tint: var(--teal-tint);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-soft: var(--teal-soft);
+  --color-slate: var(--slate);
+  --color-hairline: var(--hairline);
+  --color-paper: var(--paper);
+  --color-on-ink: var(--on-ink);
+  --color-on-ink-muted: var(--on-ink-muted);
+  --color-pass: var(--pass);
+  --color-advisory: var(--advisory);
+  --color-high: var(--high);
+  --color-critical: var(--critical);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -97,30 +97,221 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display:
+    var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Square corners are the sharpest available signal that this is not a template. */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--hairline);
   }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* AST-05: display never sets above weight 400; 600 and 700 do not exist here. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family:
+      var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  /* Tabular figures in every table and dashboard-style figure. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* AST-05: wide-tracked uppercase. The cheapest premium signal available. */
+  .eyebrow {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* Identifiers only: control IDs, frameworks, timestamps, hashes. Nothing else. */
+  .identifier {
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .display-xl {
+    font-size: clamp(38px, 6.4vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 300;
+  }
+
+  .display-lg {
+    font-size: clamp(32px, 4.8vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 300;
+  }
+
+  .display-lg.trm {
+    width: 90%;
+  }
+
+  .display-md {
+    font-size: clamp(26px, 3.4vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    font-weight: 300;
+  }
+
+  .display-sm {
+    font-size: 23px;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  .lede {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 58ch;
+  }
+
+  .prose-measure {
+    max-width: 62ch;
+  }
+
+  /* AST-07: the pattern is the only decorative asset. One flat tone on another. */
+  .pattern-bone {
+    background-image: url("/pattern-bone.png");
+    background-size: 190px;
+  }
+
+  .pattern-ink {
+    background-image: url("/pattern-ink.png");
+    background-size: 190px;
+  }
+
+  /* Hero path flow. Each path carries pathLength="1", so its dash pattern is
+     normalised to a total of 1 unit and shifting the offset by exactly 1
+     returns it to its starting position — the loop is seamless with no snap.
+     Runs in CSS rather than JS: 72 paths animated from the main thread stutter. */
+  .path-flow {
+    animation: path-flow var(--flow-duration, 24s) linear infinite;
+    animation-delay: var(--flow-delay, 0s);
+  }
+
+  /* Platform scene. Reactions pop in, drift up and fade; comment cards slide in
+     and settle. Every item shares one 14s cycle and is separated by a negative
+     delay, so the composition is always mid-flight and never starts empty. */
+  .react-pop {
+    animation: react-pop 14s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+
+  .card-pop {
+    animation: card-pop 14s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+}
+
+@keyframes react-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.4);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(6px) scale(1.12);
+  }
+  9% {
+    transform: translateY(2px) scale(1);
+  }
+  48% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1);
+  }
+  56% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.92);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.92);
+  }
+}
+
+@keyframes card-pop {
+  0% {
+    opacity: 0;
+    transform: translate3d(-18px, 8px, 0) scale(0.96);
+  }
+  6% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  52% {
+    opacity: 1;
+    transform: translate3d(0, -6px, 0) scale(1);
+  }
+  60% {
+    opacity: 0;
+    transform: translate3d(0, -18px, 0) scale(0.98);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -18px, 0) scale(0.98);
+  }
+}
+
+/* Anyone who asks for less motion gets the settled composition, not a blank
+   frame — every item resolves to its resting, visible state. */
+@media (prefers-reduced-motion: reduce) {
+  .react-pop,
+  .card-pop {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes path-flow {
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .path-flow {
+    animation: none;
   }
 }

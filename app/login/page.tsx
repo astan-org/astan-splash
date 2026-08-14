@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
@@ -32,27 +33,36 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-80"
-      >
-        <h1 className="text-2xl font-bold mb-4">Login</h1>
+    <div className="flex min-h-screen items-center justify-center bg-ink px-6">
+      <form onSubmit={handleSubmit} className="w-full max-w-[360px]">
+        <Image
+          src="/logo-light.png"
+          alt="Astan"
+          width={1400}
+          height={410}
+          className="mb-10 h-7 w-auto"
+        />
+
+        <label htmlFor="password" className="eyebrow mb-2 block text-on-ink-muted">
+          Password
+        </label>
         <input
+          id="password"
           type="password"
-          placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded mb-4"
+          className="h-11 w-full border border-[rgba(237,230,214,0.32)] bg-transparent px-3.5 text-[14px] text-bone focus:border-bone focus:outline-none"
         />
+
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
+          className="mt-6 inline-flex h-11 w-full items-center justify-center border border-bone bg-bone px-6 text-[13.5px] font-medium text-ink transition-colors hover:bg-white hover:border-white disabled:opacity-60"
         >
-          {loading ? "Checking..." : "Login"}
+          {loading ? "Checking…" : "Continue"}
         </button>
-        {error && <p className="text-red-500 mt-2">{error}</p>}
+
+        {error && <p className="mt-4 text-[13.5px] text-critical">{error}</p>}
       </form>
     </div>
   );
