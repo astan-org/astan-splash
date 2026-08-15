@@ -7,7 +7,7 @@ import ContactForm from "@/components/contact-form"
 export const metadata: Metadata = {
   title: "Ways to engage | Astan",
   description:
-    "Pilot with us, govern your agents, partner with us, or join us. Paris and New York.",
+    "Pilot with us, govern your agents, partner with us, or join us. Paris - New York.",
   alternates: { canonical: "https://astan.ai/contact" },
 }
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
               Pick the door that matches your problem
             </h1>
             <p className="lede mt-7 max-w-[62ch] text-on-ink">
-              Four ways in, one team behind them. Paris and New York.
+              Four ways in, one team behind them. Paris - New York.
             </p>
           </div>
         </section>
@@ -127,7 +127,7 @@ export default function ContactPage() {
 
               <div className="mt-10">
                 <Eyebrow>Where we are</Eyebrow>
-                <p className="mt-3 text-[14px] text-slate">Paris and New York</p>
+                <p className="mt-3 text-[14px] text-slate">Paris - New York</p>
               </div>
             </div>
 

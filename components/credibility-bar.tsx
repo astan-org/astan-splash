@@ -79,7 +79,7 @@ const facts = [
   {
     // No usable Station F asset — the supplied file is an opaque gradient JPEG.
     label: "Presence",
-    value: "Station F (Paris) and New York",
+    value: "Station F (Paris) - New York",
     icon: MapPin,
   },
 ]

@@ -43,7 +43,7 @@ export function SiteFooter() {
               protocol, two doors: cross-platform harm dispatch, and runtime
               governance for AI agents.
             </p>
-            <p className="eyebrow mt-8 text-on-ink-muted">Paris and New York</p>
+            <p className="eyebrow mt-8 text-on-ink-muted">Paris - New York</p>
           </div>
 
           {columns.map((column) => (
