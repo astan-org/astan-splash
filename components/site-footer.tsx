@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Eyebrow } from "@/components/brand"
+import Image from "next/image";
+import Link from "next/link";
+import { Eyebrow } from "@/components/brand";
 
 const columns = [
   {
@@ -23,7 +23,7 @@ const columns = [
       { href: "/contact#join", label: "Join us" },
     ],
   },
-]
+];
 
 export function SiteFooter() {
   return (
@@ -39,8 +39,9 @@ export function SiteFooter() {
               className="mb-6 h-8 w-auto"
             />
             <p className="prose-measure text-[13px] leading-relaxed text-on-ink">
-              The response layer for AI-generated harm. One protocol, two doors:
-              cross-platform harm dispatch, and runtime governance for AI agents.
+              The decision and response layer for AI-generated harm. One
+              protocol, two doors: cross-platform harm dispatch, and runtime
+              governance for AI agents.
             </p>
             <p className="eyebrow mt-8 text-on-ink-muted">Paris and New York</p>
           </div>
@@ -82,5 +83,5 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

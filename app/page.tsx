@@ -105,10 +105,8 @@ export default function HomePage() {
                 key={door.href}
                 href={door.href}
                 className={[
-                  // Centred on phones: with the door now taller than its copy,
-                  // a bottom-pinned CTA would leave a hole in the middle.
-                  "group relative flex flex-col justify-center border-t px-4 py-16 transition-colors",
-                  "sm:px-6 md:justify-start md:px-10 md:py-20",
+                  "group relative flex flex-col border-t px-4 py-16 transition-colors",
+                  "sm:px-6 md:px-10 md:py-20",
                   "lg:row-span-5 lg:grid lg:grid-rows-subgrid",
                   dark
                     ? "border-[rgba(237,230,214,0.16)] bg-ink-raised hover:bg-[#2a3766]"
@@ -133,10 +131,8 @@ export default function HomePage() {
                 {/* Utilities win over the display-lg component class, so the
                    phone size is set here and the clamp restored at lg.
                    min-h reserves three lines (3.9em at this leading) on phones:
-                   door one wraps to two and door two to three, and without the
-                   reservation the shorter title would pull its arrow up. With
-                   the eyebrow above it also fixed, both stacks come out the
-                   same height, so the centred columns align row for row. */}
+                   door one wraps to two and door two to three, so without the
+                   reservation the two ledes would start on different lines. */}
                 <h2
                   className={[
                     "display-lg trm mt-6 min-h-[3.9em] w-full text-[22px] leading-[1.3]",
@@ -149,9 +145,15 @@ export default function HomePage() {
                   {door.title}
                 </h2>
 
+                {/* flex-1 lets the lede absorb the door's spare height on
+                   phones, so the rule and the arrow below it land on the same
+                   line in both doors even when the two ledes wrap to a
+                   different number of lines. Inert at lg, where the door is a
+                   grid and the subgrid rows do the aligning. */}
                 <p
                   className={[
-                    "mt-6 hidden max-w-[46ch] text-[15px] leading-relaxed lg:block",
+                    "mt-5 flex-1 max-w-[46ch] text-[13px] leading-relaxed",
+                    "md:mt-6 md:text-[15px]",
                     dark ? "text-on-ink" : "text-slate",
                   ].join(" ")}
                 >
@@ -160,7 +162,7 @@ export default function HomePage() {
 
                 <ul
                   className={[
-                    "mt-10 hidden border-t lg:block",
+                    "mt-8 border-t md:mt-10",
                     dark
                       ? "border-[rgba(237,230,214,0.16)]"
                       : "border-hairline",
@@ -183,10 +185,9 @@ export default function HomePage() {
 
                 <span
                   className={[
-                    // Sits with the title on phones; mt-auto still pins it to
-                    // the bottom of the card from md up.
-                    "mt-10 pt-0 inline-flex items-center gap-2 self-start text-[12px] font-medium",
-                    "md:mt-auto md:pt-8 lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
+                    // mt-auto pins the arrow to the bottom edge of the door.
+                    "mt-auto pt-8 inline-flex items-center gap-2 self-start text-[12px] font-medium",
+                    "lg:mt-12 lg:gap-3 lg:pt-0 lg:text-[13.5px]",
                     dark ? "text-bone" : "text-ink",
                   ].join(" ")}
                 >

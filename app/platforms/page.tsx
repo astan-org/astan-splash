@@ -127,7 +127,6 @@ export default function PlatformsPage() {
         <section className="grid border-t border-hairline bg-teal lg:grid-cols-2">
           <div className="flex items-center px-6 py-24 md:px-10 lg:pl-[max(2.5rem,calc((100vw-1140px)/2))] lg:pr-16">
             <div className="w-full">
-              <Eyebrow className="text-[#cfdde1]">The proof</Eyebrow>
               <h2 className="display-md mt-5 max-w-[20ch] text-bone">
                 Child safety: the one harm no platform can walk away from
               </h2>
@@ -173,7 +172,6 @@ export default function PlatformsPage() {
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
