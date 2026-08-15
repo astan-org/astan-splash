@@ -66,7 +66,7 @@ export default function HomePage() {
               </h1>
               <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
                 One confirmed detection becomes coordinated, privacy-preserving,
-                audit-ready action across platforms and organizations — in
+                audit-ready action across platforms and organizations, in
                 seconds.
               </p>
 

@@ -27,16 +27,16 @@ const SITE = "https://astan.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: "Astan — The decision and response layer for AI-generated harm",
+  title: "Astan: The decision and response layer for AI-generated harm",
   description:
-    "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations — in seconds.",
+    "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations, in seconds.",
   alternates: {
     canonical: SITE,
   },
   openGraph: {
-    title: "Astan — The decision and response layer for AI-generated harm",
+    title: "Astan: The decision and response layer for AI-generated harm",
     description:
-      "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations — in seconds.",
+      "One confirmed detection becomes coordinated, privacy-preserving, audit-ready action across platforms and organizations, in seconds.",
     url: SITE,
     siteName: "Astan",
     images: [

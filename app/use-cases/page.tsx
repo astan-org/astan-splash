@@ -5,7 +5,7 @@ import { CredibilityBar } from "@/components/credibility-bar";
 import { ButtonLink, Eyebrow } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "Use cases — What the response layer changes | Astan",
+  title: "Use cases: What the response layer changes | Astan",
   description:
     "Five scenarios where a fragmented response fails today, and what a coordinated, audit-ready one does instead: child safety, AI-generated CSAM, agent misbehavior, cross-organization agent containment, and financial-sector agent governance.",
   alternates: { canonical: "https://astan.ai/use-cases" },
@@ -19,7 +19,7 @@ const scenarios = [
     today:
       "A predator causes an harm in one platform. He reappears on the next one within minutes, repeating the pattern.",
     withAstan:
-      "The confirmed detection is dispatched to every connected platform in seconds, and the mandated report is filed automatically — without the raw evidence ever leaving the originating platform.",
+      "The confirmed detection is dispatched to every connected platform in seconds, and the mandated report is filed automatically, without the raw evidence ever leaving the originating platform.",
   },
   {
     door: "Platforms",
@@ -35,7 +35,7 @@ const scenarios = [
     today:
       "A purchased agent starts doing things outside its approved scope and reaches for sensitive data. It is discovered later, in a log review, if at all.",
     withAstan:
-      "Astan quarantines the agent at the moment it steps out of scope, and notifies the vendor who sold it — who would otherwise never know.",
+      "Astan quarantines the agent at the moment it steps out of scope, and notifies the vendor who sold it, who would otherwise never know.",
   },
   {
     door: "Enterprises",
@@ -43,7 +43,7 @@ const scenarios = [
     today:
       "An agent from one company reaches another company's production systems. Neither side holds a record of whose agent it was or under whose policy it acted, and neither can switch it off.",
     withAstan:
-      "Both sides hold the same accountable record — who ran the agent, under whose policy, against whose systems — and the same ability to cut it off at the boundary.",
+      "Both sides hold the same accountable record: who ran the agent, under whose policy, against whose systems. Both hold the same ability to cut it off at the boundary.",
   },
   {
     door: "Enterprises",

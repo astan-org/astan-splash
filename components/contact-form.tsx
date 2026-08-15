@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 export const TOPICS = [
-  { value: "pilot", label: "Pilot with us — platforms" },
-  { value: "govern", label: "Govern your agents — enterprise" },
-  { value: "partner", label: "Partner with us — channel and reseller" },
-  { value: "join", label: "Join us — careers" },
+  { value: "pilot", label: "Pilot with us · platforms" },
+  { value: "govern", label: "Govern your agents · enterprise" },
+  { value: "partner", label: "Partner with us · channel and reseller" },
+  { value: "join", label: "Join us · careers" },
 ] as const;
 
 export default function ContactForm({

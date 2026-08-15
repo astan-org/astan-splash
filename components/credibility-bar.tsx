@@ -66,7 +66,7 @@ function LogoMask({
 const facts = [
   {
     label: "Intellectual property",
-    value: "Two U.S. patents filed — patent-pending",
+    value: "Two U.S. patents filed, patent-pending",
     mark: MARKS.patent,
     markLabel: "Patent",
   },

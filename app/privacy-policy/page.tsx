@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto max-w-[820px]">
           <Eyebrow>Legal</Eyebrow>
           <h1 className="display-lg mt-5 mb-12 text-ink">
-            Cross-platform abuse response — privacy policy
+            Cross-platform abuse response: privacy policy
           </h1>
 
         <div className="max-w-none space-y-10 text-[15px] leading-relaxed text-slate">

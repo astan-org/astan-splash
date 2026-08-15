@@ -13,7 +13,7 @@ import {
 } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "For enterprises — Runtime governance for AI agents | Astan",
+  title: "For enterprises: Runtime governance for AI agents | Astan",
   description:
     "Your council approved the agent. It shipped. Now no one can say who is watching it. Astan is the control layer that watches, judges, and can stop agents in real time.",
   alternates: { canonical: "https://astan.ai/enterprises" },
@@ -43,7 +43,7 @@ const capabilities = [
   {
     id: "05",
     title: "The vendor loop no one else closes",
-    text: "When a purchased agent misbehaves, Astan notifies the vendor who sold it — who would otherwise never know their agent went out of scope in your environment.",
+    text: "When a purchased agent misbehaves, Astan notifies the vendor who sold it, who would otherwise never know their agent went out of scope in your environment.",
     unique: true,
   },
 ];

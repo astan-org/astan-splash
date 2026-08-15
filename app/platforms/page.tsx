@@ -8,7 +8,7 @@ import { PlatformScene } from "@/components/platform-scene";
 import { ButtonLink, Eyebrow, SectionHead } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "For platforms — Cross-platform harm dispatch | Astan",
+  title: "For platforms: Cross-platform harm dispatch | Astan",
   description:
     "The 911 dispatcher for the internet. When a bad actor is caught on one platform, Astan dispatches a coordinated, privacy-preserving response to every connected platform in seconds.",
   alternates: { canonical: "https://astan.ai/platforms" },
