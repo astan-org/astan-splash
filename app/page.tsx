@@ -31,7 +31,7 @@ const doors = [
   {
     href: "/enterprises",
     eyebrow: "Door two · enterprises",
-    title: "Frontier governance for AI agents",
+    title: "Governance for frontier AI agents",
     lede: "Your council approved the agent. It shipped. Now no one can say who is watching it. Astan watches, judges, and can stop agents in real time.",
     points: [
       // "Sits above any existing agent gateway",
@@ -105,8 +105,8 @@ export default function HomePage() {
                 key={door.href}
                 href={door.href}
                 className={[
-                  "group relative flex flex-col border-t px-4 py-16 transition-colors",
-                  "sm:px-6 md:px-10 md:py-20",
+                  "group relative flex flex-col border-t px-3 py-16 transition-colors",
+                  "min-[360px]:px-4 sm:px-6 md:px-10 md:py-20",
                   "lg:row-span-5 lg:grid lg:grid-rows-subgrid",
                   dark
                     ? "border-[rgba(237,230,214,0.16)] bg-ink-raised hover:bg-[#2a3766]"
@@ -132,11 +132,15 @@ export default function HomePage() {
                    phone size is set here and the clamp restored at lg.
                    min-h reserves three lines (3.9em at this leading) on phones:
                    door one wraps to two and door two to three, so without the
-                   reservation the two ledes would start on different lines. */}
+                   reservation the two ledes would start on different lines.
+                   Below 360px the step down to 20px keeps "Cross-platform"
+                   inside the half-width column: at 22px it overflows and the
+                   browser breaks it at its own hyphen, stranding "Cross-" on a
+                   line of its own. */}
                 <h2
                   className={[
-                    "display-lg trm mt-6 min-h-[3.9em] w-full text-[22px] leading-[1.3]",
-                    "md:mt-3 md:min-h-0",
+                    "display-lg trm mt-6 min-h-[3.9em] w-full text-[20px] leading-[1.3]",
+                    "min-[360px]:text-[22px] md:mt-3 md:min-h-0",
                     "lg:mt-5 lg:w-[90%] lg:text-[clamp(32px,4.8vw,48px)] lg:leading-[1.04]",
                     door.titleWidth,
                     dark ? "text-bone" : "text-ink",

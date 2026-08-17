@@ -84,7 +84,7 @@ export default function EnterprisesPage() {
             <div className="w-full">
               <Eyebrow className="text-teal">Door two · enterprises</Eyebrow>
               <h1 className="display-xl mt-5 max-w-[17ch] text-ink">
-                Frontier governance for AI agents
+                Governance for frontier AI agents
               </h1>
               <p className="lede mt-7 max-w-[52ch] text-slate">
                 Your governance council approved the agent. It shipped to
