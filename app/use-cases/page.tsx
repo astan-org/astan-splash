@@ -7,7 +7,7 @@ import { ButtonLink, Eyebrow } from "@/components/brand";
 export const metadata: Metadata = {
   title: "Use cases: What the response layer changes | Astan",
   description:
-    "Five scenarios where a fragmented response fails today, and what a coordinated, audit-ready one does instead: child safety, AI-generated CSAM, agent misbehavior, cross-organization agent containment, and financial-sector agent governance.",
+    "Six scenarios where a fragmented response fails today, and what a coordinated, audit-ready one does instead: child safety, AI-generated CSAM, agent misbehavior, cross-organization agent containment, financial-sector agent governance, and agentic remediation at scale.",
   alternates: { canonical: "https://astan.ai/use-cases" },
 };
 
@@ -53,6 +53,14 @@ const scenarios = [
     withAstan:
       "Astan is the control plane that integrates with your existing controls to provide all three: an inventory, an enforced policy, and an off switch that does not require a deploy.",
   },
+  {
+    door: "Enterprises",
+    title: "Agentic remediation at scale",
+    today:
+      "A flaw is disclosed in an agent framework. The bank can rotate the key, but not say which of 400 agents used it, who owns them, or how far the exposure reached, and remediation becomes a quarter-long project.",
+    withAstan:
+      "Inventory and enforcement sit in the same place, so exposure is revoked by agent class, by tool, by credential or by tenant. The same record shows what those agents actually did, which is what risk and compliance need to close the incident.",
+  },
 ];
 
 export default function UseCasesPage() {
@@ -70,7 +78,7 @@ export default function UseCasesPage() {
               What changes when the response is coordinated
             </h1>
             <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
-              Five scenarios, written as archetypes. Each one is a case where
+              Six scenarios, written as archetypes. Each one is a case where
               the detection already happened and the response is what failed.
             </p>
           </div>
