@@ -91,7 +91,7 @@ export function SiteHeader({
               key={item.href}
               href={item.href}
               className={cn(
-                "text-[13.5px] transition-colors",
+                "text-[14.5px] transition-colors",
                 dark
                   ? "text-on-ink hover:text-bone"
                   : "text-slate hover:text-teal-deep",
@@ -103,7 +103,7 @@ export function SiteHeader({
           <Link
             href="/contact"
             className={cn(
-              "inline-flex h-9 items-center border px-4 text-[13.5px] font-medium transition-colors",
+              "inline-flex h-9 items-center border px-4 text-[14.5px] font-medium transition-colors",
               dark
                 ? "border-[rgba(237,230,214,0.32)] text-bone hover:border-bone"
                 : "border-ink text-ink hover:bg-ink hover:text-bone",

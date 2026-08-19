@@ -56,7 +56,10 @@ export default function HomePage() {
         <BackgroundPaths id="hero" className="flex min-h-screen items-center">
           <section className="w-full px-6 py-24 md:px-10">
             <div className="mx-auto max-w-[1140px] text-center">
-              <Eyebrow className="text-teal-soft">
+              {/* Nudged up from the 10.5px .eyebrow default on desktop only:
+                 at 0.26em tracking it is the smallest type on the hero and
+                 the first line a visitor reads. */}
+              <Eyebrow className="text-teal-soft lg:text-[12px]">
                 One protocol · two doors
               </Eyebrow>
               {/* display-xl sets 0.98, which is too tight once the heading
