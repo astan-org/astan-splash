@@ -80,7 +80,7 @@ export default function PlatformsPage() {
                 <ButtonLink href="/contact#pilot" variant="solid">
                   Pilot with us
                 </ButtonLink>
-                <ButtonLink href="/use-cases" variant="line">
+                <ButtonLink href="/use-cases?door=platforms" variant="line">
                   Read the scenarios
                 </ButtonLink>
               </div>

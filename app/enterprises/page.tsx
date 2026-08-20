@@ -96,7 +96,7 @@ export default function EnterprisesPage() {
                 <ButtonLink href="/contact#govern" variant="solid">
                   Govern your agents
                 </ButtonLink>
-                <ButtonLink href="/use-cases" variant="line">
+                <ButtonLink href="/use-cases?door=enterprises" variant="line">
                   Read the scenarios
                 </ButtonLink>
               </div>

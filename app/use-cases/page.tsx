@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CredibilityBar } from "@/components/credibility-bar";
@@ -63,7 +64,44 @@ const scenarios = [
   },
 ];
 
-export default function UseCasesPage() {
+/* The two door pages link here with ?door=..., so a visitor who arrives from
+   one door sees only their own scenarios. The header and footer link here
+   plain, which still shows all six. Canonical stays /use-cases in every case,
+   so the filtered views are not competing pages. */
+type Door = "Platforms" | "Enterprises";
+
+const filters: { door: Door | null; label: string; href: string }[] = [
+  { door: null, label: "All scenarios", href: "/use-cases" },
+  {
+    door: "Platforms",
+    label: "For platforms",
+    href: "/use-cases?door=platforms",
+  },
+  {
+    door: "Enterprises",
+    label: "For enterprises",
+    href: "/use-cases?door=enterprises",
+  },
+];
+
+const COUNT_WORD = ["No", "One", "Two", "Three", "Four", "Five", "Six"];
+
+function activeDoor(raw: string | string[] | undefined): Door | null {
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  if (value === "platforms") return "Platforms";
+  if (value === "enterprises") return "Enterprises";
+  return null;
+}
+
+export default function UseCasesPage({
+  searchParams,
+}: {
+  searchParams?: { door?: string | string[] };
+}) {
+  const door = activeDoor(searchParams?.door);
+  const shown = door
+    ? scenarios.filter((scenario) => scenario.door === door)
+    : scenarios;
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader tone="dark" />
@@ -78,13 +116,39 @@ export default function UseCasesPage() {
               What changes when the response is coordinated
             </h1>
             <p className="lede mx-auto mt-7 max-w-[62ch] text-on-ink">
-              Six scenarios, written as archetypes. Each one is a case where
-              the detection already happened and the response is what failed.
+              {COUNT_WORD[shown.length]}{" "}
+              {shown.length === 1 ? "scenario" : "scenarios"}, written as
+              archetypes. Each one is a case where the detection already
+              happened and the response is what failed.
             </p>
+
+            {/* A visitor who lands filtered still needs a way out to the rest,
+               so the filter is always visible rather than implied by the link
+               they followed. */}
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+              {filters.map((filter) => {
+                const active = filter.door === door;
+                return (
+                  <Link
+                    key={filter.href}
+                    href={filter.href}
+                    aria-current={active ? "page" : undefined}
+                    className={[
+                      "text-[13.5px] transition-colors",
+                      active
+                        ? "text-teal-soft"
+                        : "text-on-ink-muted hover:text-on-ink",
+                    ].join(" ")}
+                  >
+                    {filter.label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        {scenarios.map((scenario, index) => {
+        {shown.map((scenario, index) => {
           const onBone = index % 2 === 1;
           return (
             <section
